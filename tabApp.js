@@ -16,7 +16,7 @@ tabApp.controller("myCtlr", function($scope) {
         $scope.clearFields();
         id1 = id1 + 1;
     }
-    $scope.clearFields = function(){
+    $scope.clearFields = function() {
         $scope.prod = {
             id: 1,
             name: "",
