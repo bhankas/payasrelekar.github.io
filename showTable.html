@@ -49,7 +49,7 @@
                 <td>{{ product.desc }}</td>
                 <td>{{ product.ctg }}</td>
                 <td>{{ product.prc }}</td>
-                <td><input class="btn-danger btn-sm" type="BUTTON" value="DEL" ng-click="rmRow($index)"/></td>
+                <td><input class="btn-danger btn-sm" type="BUTTON" value="DEL" ng-click="prodList.splice($index,1)"/></td>
             </tr>
         </table>
     </body>
