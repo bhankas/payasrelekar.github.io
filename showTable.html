@@ -41,6 +41,7 @@
                 <th>DESCRIPTION</th>
                 <th>CATEGORY</th>
                 <th>PRICE</th>
+                <th></th>
             </tr>
             <tr ng-repeat="product in prodList">
                 <td>{{ product.id }}</td>
@@ -48,6 +49,7 @@
                 <td>{{ product.desc }}</td>
                 <td>{{ product.ctg }}</td>
                 <td>{{ product.prc }}</td>
+                <td><input class="btn-danger btn-sm" type="BUTTON" value="DEL" ng-click="rmRow()"/></td>
             </tr>
         </table>
     </body>

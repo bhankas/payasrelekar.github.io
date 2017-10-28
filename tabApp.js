@@ -26,11 +26,14 @@ tabApp.controller("myCtlr", function($scope) {
         };
     }
     $scope.checkFields = function(e) {
-        if($scope.prod.name!="" && $scope.prod.desc!="" && $scope.prod.ctg!="" && $scope.prod.prc!="") {
-            return false;
-        }
-        else {
+        if($scope.prod.name=="" || $scope.prod.desc=="" || $scope.prod.ctg=="" || $scope.prod.prc=="") {
             return true;
         }
+        else {
+            return false;
+        }
+    }
+    $scope.rmRow = function(e) {
+        
     }
 });
