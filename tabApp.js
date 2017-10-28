@@ -13,7 +13,7 @@ tabApp.controller("myCtlr", function($scope) {
     $scope.addRow = function() {
         $scope.prod.id = id1;
         $scope.prodList.push($scope.prod);
-        clearFields();
+        $scope.clearFields();
         id1 = id1 + 1;
     }
     $scope.clearFields = function(){
@@ -33,7 +33,7 @@ tabApp.controller("myCtlr", function($scope) {
             return false;
         }
     }
-    $scope.rmRow = function(e) {
-        
+    $scope.rmRow = function($index) {
+        $scope.prodList.splice($index, 1);
     }
 });
