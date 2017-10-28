@@ -34,6 +34,14 @@ tabApp.controller("myCtlr", function($scope) {
         }
     }
     $scope.rmRow = function($index) {
-        $scope.prodList.splice($index, 1);
+        $scope.prodList.splice($index-1, 1);
+    }
+    $scope.checkPresent = function(e) {
+        if($scope.prodList.length>0) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 });

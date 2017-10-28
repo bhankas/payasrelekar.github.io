@@ -34,7 +34,7 @@
             </table>
         </form>
         <br/><br/><br/>
-        <table class="table table-striped">
+        <table class="table table-striped" ng-show="checkPresent()">
             <tr>
                 <th>ID</th>
                 <th>NAME</th>
@@ -49,7 +49,7 @@
                 <td>{{ product.desc }}</td>
                 <td>{{ product.ctg }}</td>
                 <td>{{ product.prc }}</td>
-                <td><input class="btn-danger btn-sm" type="BUTTON" value="DEL" ng-click="rmRow()"/></td>
+                <td><input class="btn-danger btn-sm" type="BUTTON" value="DEL" ng-click="rmRow($index)"/></td>
             </tr>
         </table>
     </body>
