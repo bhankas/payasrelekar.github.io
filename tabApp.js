@@ -46,7 +46,6 @@ tabApp.controller("myCtlr", function($scope) {
 		$scope.editChk = $index;
 	}
 	$scope.changeProd = function($index,product) {
-		$scope.prodList[$index] = product;
 		$scope.editChk = -1;
 	}
 });
