@@ -1,55 +1,56 @@
 <html ng-app="tabApp">
-    <head>
-        <title>Show Table</title>
-        <script src="angular.min.js"></script>
-        <script src="tabApp.js"></script>
-        <link href="bootstrap.css" rel="stylesheet"/>
-        <link href="bootstrap-theme.css" rel="stylesheet"/>
-    </head>
+	<head>
+		<title>Show Table</title>
+		<script src="angular.min.js"></script>
+		<script src="tabApp.js"></script>
+		<link href="bootstrap.css" rel="stylesheet"/>
+		<link href="bootstrap-theme.css" rel="stylesheet"/>
+	</head>
 
-    <body ng-controller="myCtlr">
-        <h1><i><center><u>Product Portal</u></center></i></h1>
-        <form>
-            <table align="center">
-                <tr>
-                    <td>Name</td>
-                    <td><input type="TEXT" name="name" id="name" ng-model="prod.name"></td>
-                </tr>
-                <tr>
-                    <td>Description</td>
-                    <td><input type="TEXT" name="desc" id="desc" ng-model="prod.desc"></td>
-                </tr>
-                <tr>
-                    <td>Category</td>
-                    <td><input type="TEXT" name="ctg" id="ctg" ng-model="prod.ctg"></td>
-                </tr>
-                <tr>
-                    <td>Price</td>
-                    <td><input type="TEXT" name="prc" id="prc" ng-model="prod.prc"></td>
-                </tr>
-                <tr>
-                    <td><input class="btn btn-success" type="SUBMIT" name="add" value="ADD" ng-click="addRow()" ng-disabled="checkFields()"/></td>
-                    <td><input class="btn btn-danger" type="RESET" name="rst" value="CANCEL" ng-click="clearFields()"/></td>
-                </tr>
-            </table>
-        </form>
-        <br/><br/><br/>
-        <table class="table table-striped" ng-show="checkPresent()">
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>DESCRIPTION</th>
-                <th>CATEGORY</th>
-                <th>PRICE</th>
-            </tr>
-            <tr ng-repeat="product in prodList">
-                <td>{{ product.id }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.desc }}</td>
-                <td>{{ product.ctg }}</td>
-                <td>{{ product.prc }}</td>
-                <td><input class="btn-danger btn-sm" type="BUTTON" value="DEL" ng-click="prodList.splice($index,1)"/></td>
-            </tr>
-        </table>
-    </body>
+	<body ng-controller="myCtlr">
+		<h1><i><center><u>Product Portal</u></center></i></h1>
+		<form>
+			<table align="center">
+				<tr>
+					<td>Name</td>
+					<td><input type="TEXT" name="name" id="name" ng-model="prod.name"></td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td><input type="TEXT" name="desc" id="desc" ng-model="prod.desc"></td>
+				</tr>
+				<tr>
+					<td>Category</td>
+					<td><input type="TEXT" name="ctg" id="ctg" ng-model="prod.ctg"></td>
+				</tr>
+				<tr>
+					<td>Price</td>
+					<td><input type="TEXT" name="prc" id="prc" ng-model="prod.prc"></td>
+				</tr>
+				<tr>
+					<td><input class="btn btn-success" type="SUBMIT" name="add" value="ADD" ng-click="addRow()" ng-disabled="checkFields()"/></td>
+					<td><input class="btn btn-danger" type="RESET" name="rst" value="CANCEL" ng-click="clearFields()"/></td>
+				</tr>
+			</table>
+		</form>
+		<br/><br/><br/>
+		<table class="table table-striped" ng-show="checkPresent()">
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>DESCRIPTION</th>
+				<th>CATEGORY</th>
+				<th>PRICE</th>
+			</tr>
+			<tr ng-repeat="product in prodList track by $index">
+				<td>{{ product.id }}</td>
+				<td>{{ product.name }}</td>
+				<td>{{ product.desc }}</td>
+				<td>{{ product.ctg }}</td>
+				<td>{{ product.prc }}</td>
+				<td><input class="btn-warning btn-sm" type="BUTTON" value="EDIT" ng-click="editProd($index)"/></td>
+				<td><input class="btn-danger btn-sm" type="BUTTON" value="DEL" ng-click="prodList.splice($index,1)"/></td>
+			</tr>
+		</table>
+	</body>
 </html>
