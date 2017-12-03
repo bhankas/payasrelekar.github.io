@@ -45,13 +45,15 @@
 			<tr ng-repeat="product in prodList">
 				<td>{{ product.id }}</td>
 				<td ng-if="editChk!=$index">{{ product.name }}</td>
-				<td ng-if="editChk==$index"><INPUT type="TEXT" ng-model="product.name"/></td>
 				<td ng-if="editChk!=$index">{{ product.desc }}</td>
-				<td ng-if="editChk==$index"><INPUT type="TEXT" ng-model="product.desc"/></td>
 				<td ng-if="editChk!=$index">{{ product.ctg }}</td>
-				<td ng-if="editChk==$index"><INPUT type="TEXT" ng-model="product.ctg"/></td>
 				<td ng-if="editChk!=$index">{{ product.prc }}</td>
+				
+				<td ng-if="editChk==$index"><INPUT type="TEXT" ng-model="product.name"/></td>
+				<td ng-if="editChk==$index"><INPUT type="TEXT" ng-model="product.desc"/></td>
+				<td ng-if="editChk==$index"><INPUT type="TEXT" ng-model="product.ctg"/></td>
 				<td ng-if="editChk==$index"><INPUT type="TEXT" ng-model="product.prc"/></td>
+
 				<td><input class="btn-warning btn-sm" type="BUTTON" value="EDIT" ng-if="editChk!=$index" ng-click="editProd($index)"/></td>
 				<td><input class="btn-primary btn-sm" type="BUTTON" value="OK" ng-if="editChk==$index" ng-click="changeProd($index,product)"/></td>
 				<td><input class="btn-danger btn-sm" type="BUTTON" value="DEL" ng-click="prodList.splice($index,1)"/></td>
